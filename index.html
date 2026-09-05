@@ -10,28 +10,98 @@
   </head>
   <body>
     <div id="hearts" aria-hidden="true"></div>
+
     <main>
       <section id="welcome" class="screen welcome" aria-labelledby="welcome-title">
-        <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>        <div class="awooo-cat" aria-label="Un gatito diciendo AWOOO"><span class="cat-bubble">AWOOO ♡</span><span class="cat-face">🐱</span></div>
-
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+        <div class="awooo-cat" aria-label="Un gatito diciendo AWOOO">
+          <span class="cat-bubble">AWOOO ♡</span>
+          <span class="cat-face">🐱</span>
+        </div>
         <p class="eyebrow">Una sorpresa para</p>
         <h1 id="welcome-title">Mi querida <span data-girlfriend-name></span></h1>
-        <p class="intro">Hay un pequeño rincón en internet que hice pensando solamente en ti.</p>        <div class="top-music"><span>♪ Nuestra canción</span><button class="music-mini" onclick="document.querySelector('#music-toggle').click()">▶ Escuchar</button></div>
-
-        <button id="open-surprise" class="button button-primary">Abrir mi sorpresa <span>♡</span></button><p class="hint">Tócalo cuando estés lista</p>
+        <p class="intro">Hay un pequeño rincón en internet que hice pensando solamente en ti.</p>
+        <div class="top-music" aria-label="Música de fondo"><span class="music-label">♪ Nuestra canción</span><button id="music-toggle" class="music-mini" aria-pressed="false"><span class="music-icon">▶</span><span>Escuchar juntos</span><b>♡</b></button><audio id="background-music" loop preload="none"><source src="milo-j-m-a-i-video-oficial.m4a" type="audio/mp4" /></audio></div>
+        <button id="open-surprise" class="button button-primary">Abrir mi sorpresa <span>♡</span></button>
+        <p class="hint">Tócalo cuando estés lista</p>
       </section>
+
       <section id="story" class="story hidden" aria-label="Nuestra historia">
-        <header class="section-heading"><p class="eyebrow">Para la persona que ilumina mis días</p><h2>Hola, <span data-girlfriend-name></span> ♡</h2></header>
-        <article class="letter card"><div class="letter-seal">♥</div><p id="letter-text"></p><p class="signature">Con todo mi amor,<br /><strong data-user-name></strong></p></article>
-        <section class="together card" aria-labelledby="together-title"><p class="eyebrow">Nuestro tiempo juntos</p><h3 id="together-title">Cada momento contigo cuenta</h3><div id="counter" class="counter" aria-live="polite"><div><strong id="days">0</strong><span>días</span></div><div><strong id="hours">0</strong><span>horas</span></div><div><strong id="minutes">0</strong><span>minutos</span></div></div><p class="counter-note">desde que comenzó nuestra historia</p></section>
-        <section class="reasons" aria-labelledby="reasons-title"><p class="eyebrow">Unas cuantas razones</p><h2 id="reasons-title">Por las que te amo</h2><div id="reasons-list" class="reasons-grid"></div></section>
-        <section class="memory-section" aria-labelledby="moments-title"><p class="eyebrow">Nuestra pequeña historia</p><h2 id="moments-title">Momentos que guardo contigo</h2><div id="moments-list" class="timeline"></div></section>
-        <section class="notes card" aria-labelledby="notes-title"><p class="eyebrow">Para cuando lo necesites</p><h2 id="notes-title">Abre una notita ♡</h2><p class="notes-intro">Hay algo para cada tipo de día.</p><div id="notes-list" class="notes-grid"></div></section>
-        <section class="promises" aria-labelledby="promises-title"><p class="eyebrow">Lo que quiero que sepas</p><h2 id="promises-title">Mis promesas para ti</h2><div id="promises-list" class="promises-list"></div></section>
-        <section class="music card" aria-label="Música"><div><p class="eyebrow">Nuestra canción</p><h3>Un toque de música</h3><p>Actívala si quieres acompañar este momento.</p></div><button id="music-toggle" class="button button-outline" aria-pressed="false">▶ Escuchar</button><audio id="background-music" loop preload="none"><source src="milo-j-m-a-i-video-oficial.m4a" type="audio/mp4" /></audio></section>        <section class="flower-garden"><p class="eyebrow">Un jardín para ti</p><h2>Que nunca te falten flores ♡</h2><div class="flowers"><span>🌸</span><span>🌷</span><span>🌼</span><span>🌹</span><span>🌸</span><span>🌻</span></div><p>Porque haces florecer cosas bonitas en mi vida.</p></section>
+        <header class="section-heading">
+          <p class="eyebrow">Para la persona que ilumina mis días</p>
+          <h2>Hola, <span data-girlfriend-name></span> ♡</h2>
+        </header>
 
-        <section class="final card" aria-labelledby="final-title"><div class="gift">🎁</div><p class="eyebrow">Una última cosita</p><h2 id="final-title">¿Quieres abrir tu último regalo?</h2><button id="final-button" class="button button-primary">Sí, quiero verlo</button><div id="final-message" class="final-message" hidden><span>✦</span><p id="final-text"></p><span>✦</span></div></section>
+        <article class="letter card">
+          <div class="letter-seal">♥</div>
+          <p id="letter-text"></p>
+          <p class="signature">Con todo mi amor,<br /><strong data-user-name></strong></p>
+        </article>
+
+        <section class="together card" aria-labelledby="together-title">
+          <p class="eyebrow">Nuestro tiempo juntos</p>
+          <h3 id="together-title">Cada momento contigo cuenta</h3>
+          <div id="counter" class="counter" aria-live="polite">
+            <div><strong id="days">0</strong><span>días</span></div>
+            <div><strong id="hours">0</strong><span>horas</span></div>
+            <div><strong id="minutes">0</strong><span>minutos</span></div>
+          </div>
+          <p class="counter-note">desde que comenzó nuestra historia</p>
+        </section>
+
+        <section class="reasons" aria-labelledby="reasons-title">
+          <p class="eyebrow">Unas cuantas razones</p>
+          <h2 id="reasons-title">Por las que te amo</h2>
+          <div id="reasons-list" class="reasons-grid"></div>
+        </section>
+
+        <section class="memory-section" aria-labelledby="moments-title">
+          <p class="eyebrow">Nuestra pequeña historia</p>
+          <h2 id="moments-title">Momentos que guardo contigo</h2>
+          <div id="moments-list" class="timeline"></div>
+        </section>
+
+        <section class="notes card" aria-labelledby="notes-title">
+          <p class="eyebrow">Para cuando lo necesites</p>
+          <h2 id="notes-title">Abre una notita ♡</h2>
+          <p class="notes-intro">Hay algo para cada tipo de día.</p>
+          <div id="notes-list" class="notes-grid"></div>
+        </section>
+
+        <section class="promises" aria-labelledby="promises-title">
+          <p class="eyebrow">Lo que quiero que sepas</p>
+          <h2 id="promises-title">Mis promesas para ti</h2>
+          <div id="promises-list" class="promises-list"></div>
+        </section>
+
+        <section class="music card" aria-label="Música">
+          <div>
+            <p class="eyebrow">Nuestra canción</p>
+            <h3>Un toque de música</h3>
+            <p>Actívala si quieres acompañar este momento.</p>
+          </div>
+          <button class="button button-outline" disabled>♪ Ya está sonando arriba</button>
+          <audio loop preload="none">
+            <!-- Archivo de música actual. Si lo cambias, actualiza también este nombre. -->
+            <source src="milo-j-m-a-i-video-oficial.m4a" type="audio/mp4" />
+          </audio>
+        </section>
+
+        <section class="final card" aria-labelledby="final-title">
+          <div class="gift">🎁</div>
+          <p class="eyebrow">Una última cosita</p>
+          <h2 id="final-title">¿Quieres abrir tu último regalo?</h2>
+          <button id="final-button" class="button button-primary">Sí, quiero verlo</button>
+          <div id="final-message" class="final-message" hidden>
+            <span>✦</span>
+            <p id="final-text"></p>
+            <span>✦</span>
+          </div>
+        </section>
       </section>
-    </main><script src="script.js"></script>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
