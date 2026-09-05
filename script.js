@@ -20,7 +20,23 @@ No necesito una fecha especial para decirte que te amo, pero sí quería que tuv
     { icon: "🤍", text: "Porque contigo puedo ser yo sin limites" },
     { icon: "✨", text: "Porque haces especial lo cotidiano" },
     { icon: "♾️", text: "PORQUE ERES INSANA FRIFAYERA MUAMUA" },
+  ],  moments: [
+    { date: "El comienzo", title: "El día que todo cambió", text: "[Escribe cómo se conocieron o qué pensaste la primera vez que hablaste con ella.]" },
+    { date: "Un recuerdo", title: "Una risa que no olvido", text: "[Pon aquí una anécdota que les dé risa a los dos.]" },
+    { date: "Hoy", title: "Mi lugar favorito", text: "Contigo, incluso los días normales se vuelven mis favoritos." },
   ],
+  notes: [
+    { title: "Cuando estés triste", icon: "🌧️", text: "[Recuérdale aquí que no está sola y que puede contar contigo.]" },
+    { title: "Cuando sonrías", icon: "☀️", text: "Tu sonrisa tiene el poder de arreglar más de lo que imaginas." },
+    { title: "Cuando me extrañes", icon: "💌", text: "[Escribe un mensaje corto que le haga sentirte cerca.]" },
+    { title: "Cuando dudes de ti", icon: "🌟", text: "Eres capaz, valiente y muchísimo más increíble de lo que a veces crees." },
+  ],
+  promises: [
+    "[Prometo escucharte siempre que quieras hablar.]",
+    "[Prometo cuidar de tu corazón y celebrar tus sueños.]",
+    "[Prometo seguir encontrando maneras de hacerte sonreír.]",
+  ],
+
   finalMessage: "Desde que llegaste a mi vida entendí que el amor verdaderamente bonito no se busca ni se fuerza, sino que se construye todos los días con alguien que te hace sentir en casa sin importar en dónde estés. Contigo aprendí que querer a alguien de verdad va muchísimo más allá de las palabras; es encontrar a una persona en la que puedo confiar a ciegas, mi refugio seguro en los días difíciles y mi compañera favorita para celebrar cada pequeña victoria. No me canso de admirar la luz que transmites, tu forma de ver la vida y la manera tan única en la que logras cambiarme el ánimo con solo una sonrisa o una mirada. Gracias por enseñarme lo hermoso que es querer sin reservas, por aguantarme en mis peores momentos y por demostrarme día a día lo que significa sostener a alguien con ternura y respeto. Quiero que nunca dudes de todo lo que vales ni de lo increíble que eres, porque para mí lo eres todo; promete que jamás olvidarás que, pase lo que pase y venga lo que venga, siempre voy a estar a tu lado para cuidarte, apoyarte en cada uno de tus sueños y recordarte todos los días lo profundamente enamorado que estoy de ti.",
 };
 
@@ -88,3 +104,8 @@ function makeHearts(amount = 1) {
 }
 makeHearts(12);
 setInterval(() => makeHearts(), 1600);
+
+const add = (id, items, render) => items.forEach((item, index) => document.querySelector(id).appendChild(render(item, index)));
+add("#moments-list", CONFIG.moments, ({ date, title, text }) => { const el = document.createElement("article"); el.className = "moment"; el.innerHTML = `<p class="moment-date">${date}</p><h3>${title}</h3><p>${text}</p>`; return el; });
+add("#notes-list", CONFIG.notes, ({ title, icon, text }) => { const el = document.createElement("details"); el.className = "note"; el.innerHTML = `<summary><span>${icon}</span>${title}<b>+</b></summary><p>${text}</p>`; return el; });
+add("#promises-list", CONFIG.promises, (text, index) => { const el = document.createElement("article"); el.className = "promise"; el.innerHTML = `<span>0${index + 1}</span><p>${text}</p><i>♥</i>`; return el; });
